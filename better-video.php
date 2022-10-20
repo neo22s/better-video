@@ -3,7 +3,7 @@
 	* Plugin Name: Better Video & Playlist
 	* Plugin URI: https://garridodiaz.com/html5-playlist-video-player/
 	* Description: Improves video capabilities for wordpress and adds video playlist features.
-	* Version: 2
+	* Version: 2.0.1
 	* Author: Chema Garrido
 	* Author URI: https://garridodiaz.com
 	* License: GPL2
