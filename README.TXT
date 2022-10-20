@@ -1,8 +1,8 @@
 
-=== Better Video & Playlist ===
+=== Better Video ===
 Contributors: deambulando
 Donate link: https://paypal.me/chema/10EUR
-Tags: video, playlist, html5 video, start video, resume video, progress
+Tags: video, playlist, video playlist, html5 video, start video, resume video, progress
 Requires at least: 5.0
 Tested up to: 5.9
 Stable tag: 2.0.1
@@ -22,16 +22,16 @@ If user is logged in we store video position in the database. So even if changes
 = Features =
 
 - Resume video from last position. Saves progress in DB and browser storage.
- - On pause or window close, stores progress
- -  Start playing video at custom time using ?t=SECONDS ex ?t=120 will start at 2 minutes
+- On pause or window close, stores progress
+-  Start playing video at custom time using ?t=SECONDS ex ?t=120 will start at 2 minutes
 
-    **Playlist Features**
-    - Create playlist video from a HTML5 list or JS array
-    - Resume on last played video
-    - Autoplay next video on video end
-    - Mark video as played
-    - Start playing from video via url parameter using ?start_video=ID_VIDEO
-    - Stored in user browser storage, not in DB
+**Playlist Features**
+- Create playlist video from a HTML5 list or JS array
+- Resume on last played video
+- Autoplay next video on video end
+- Mark video as played
+- Start playing from video via url parameter using ?start_video=ID_VIDEO
+- Stored in user browser storage, not in DB
 
 
 == Installation ==
@@ -39,15 +39,15 @@ If user is logged in we store video position in the database. So even if changes
 Through WordPress admin:
 
 1. Go to Plugins -> Add New
-1. Search for "Better Video"
-1. Install the plugin
-1. Activate it
+2. Search for "Better Video"
+3. Install the plugin
+4. Activate it
 
 Through FTP:
 
 1. Download the plugin
-1. Unzip .zip and upload the folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
+2. Unzip .zip and upload the folder to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
 
 
 == Frequently Asked Questions ==
