@@ -3,19 +3,19 @@
 	* Plugin Name: Better Video & Playlist
 	* Plugin URI: https://garridodiaz.com/html5-playlist-video-player/
 	* Description: Improves video capabilities for wordpress and adds video playlist features.
-	* Version: 2.0.1
+	* Version: 2.0
 	* Author: Chema Garrido
 	* Author URI: https://garridodiaz.com
 	* License: GPL2
 */
 
-add_action( 'wp_enqueue_scripts', 'better_video_assets');
-add_action( 'wp_ajax_store_video_time', 'store_video_time' );
-add_action( 'wp_ajax_get_video_time', 'get_video_time' );
+add_action( 'wp_enqueue_scripts', 'bbpl_assets');
+add_action( 'wp_ajax_bbpl_store_video_time', 'bbpl_store_video_time' );
+add_action( 'wp_ajax_bbpl_get_video_time', 'bbpl_get_video_time' );
 
 /* enqueue scripts and style from parent theme */        
-function better_video_assets() {
-	wp_enqueue_script( 'better-video', plugin_dir_url( __FILE__ ) . 'js/better-video.js', array('jquery'), '2.0.1', true );
+function bbpl_assets() {
+	wp_enqueue_script( 'better-video', plugin_dir_url( __FILE__ ) . 'js/better-video.js', array('jquery'), '2.0', true );
 
 	wp_localize_script(
 		'better-video',
@@ -27,10 +27,12 @@ function better_video_assets() {
 	);
 }
 
+
 /**
  * Handles AJAX requests.
  */
-function store_video_time() {
+function bbpl_store_video_time() {
+
 	// Handle the ajax request here
 	check_ajax_referer( 'better-video' );
 	$return = FALSE;
@@ -38,8 +40,8 @@ function store_video_time() {
 	//only store for loged in users
 	if (is_user_logged_in() ){
 		global $current_user;
-		$time = $_POST['time'];
-		$video = $_POST['video'];
+		$time = sanitize_text_field($_POST['time']);
+		$video = sanitize_url($_POST['video']);
 
 		if (is_numeric($time) AND wp_http_validate_url($video))
 			$return = update_user_meta($current_user->ID,'bvideo-'.md5($video),$time);
@@ -49,7 +51,7 @@ function store_video_time() {
 }
 
 
-function get_video_time() {
+function bbpl_get_video_time() {
 	// Handle the ajax request here
 	check_ajax_referer( 'better-video' );
 	$return = 0;
@@ -57,7 +59,7 @@ function get_video_time() {
 	//only store for loged in users
 	if (is_user_logged_in() ){
 		global $current_user;
-		$video = $_POST['video'];
+		$video = sanitize_url($_POST['video']);
 		if (wp_http_validate_url($video))
 			$return = get_user_meta($current_user->ID,'bvideo-'.md5($video));
 	}

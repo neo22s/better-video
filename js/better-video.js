@@ -1,6 +1,6 @@
 /**
- * Better Video and playlist jQuery plugin - improving the current html5 video player and adding a playlist
- * More info https://garridodiaz.com/html5-playlist-video-player/
+ * Better Video and playlist jQuery plugin
+ * Version: 2.0
  */
 jQuery(document).ready(function( $ ) {
     
@@ -12,7 +12,7 @@ jQuery(document).ready(function( $ ) {
         //ajax call
         $.post(my_ajax_obj.ajax_url, {         //POST request
             _ajax_nonce: my_ajax_obj.nonce,     //nonce
-            action: "store_video_time",            //action
+            action: "bbpl_store_video_time",            //action
             time: this.currentTime,                  //time
             video: this.src,                    //video url
             }
@@ -58,7 +58,7 @@ jQuery(document).ready(function( $ ) {
                     //ajax call
                     $.post(my_ajax_obj.ajax_url, {         //POST request
                         _ajax_nonce: my_ajax_obj.nonce,     //nonce
-                        action: "get_video_time",            //action
+                        action: "bbpl_get_video_time",            //action
                         video: this.src,                    //video url
                         },function(data) {                    //callback
                             if (data[0] < video_obj.duration) 

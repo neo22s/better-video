@@ -1,12 +1,10 @@
-
-
 === Better Video & Playlist ===
 Contributors: deambulando
 Donate link: https://paypal.me/chema/10EUR
 Tags: video, playlist, video playlist, html5 video, start video, resume video, progress
 Requires at least: 5.0
-Tested up to: 5.9
-Stable tag: 2.0.1
+Tested up to: 6.0
+Stable tag: 2.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
