@@ -3,8 +3,8 @@ Contributors: deambulando
 Donate link: https://paypal.me/chema/10EUR
 Tags: video, playlist, video playlist, html5 video, start video, resume video, progress
 Requires at least: 5.0
-Tested up to: 6.0
-Stable tag: 2.0
+Tested up to: 6.1
+Stable tag: 2.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -116,6 +116,9 @@ To add the JS to your post/page you can use a plugin like https://es.wordpress.o
 None.
 
 == Changelog ==
+
+= 2.0.2 =
+* smooth scroll to video
 
 = 2.0.1 =
 * ajax stores video time for logged user 

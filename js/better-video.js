@@ -232,10 +232,12 @@ jQuery(document).ready(function( $ ) {
                     "data-bvideo_id":$(this).data("bvideo_id") //which video are we playing
                 });
 
-                if ($('#bvideo_title').length )
-                    location.href = "#bvideo_title"; 
-                else
-                    location.href = "#bvideo";   
+                //scroll to video
+                if ($('#bvideo_title').length )//location.href = "#bvideo_title"; 
+                    document.querySelector('#bvideo_title').scrollIntoView({behavior: 'smooth'});
+                    
+                else//location.href = "#bvideo"; 
+                    document.querySelector('#bvideo').scrollIntoView({behavior: 'smooth'}); 
 
                 //remember last video
                 localStorage.setItem('bvideo-'+current_url, $(this).data("bvideo_id"));
